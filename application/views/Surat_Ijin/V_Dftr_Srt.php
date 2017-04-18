@@ -172,8 +172,7 @@
                                         <!-- BEGIN SAMPLE TABLE PORTLET-->
                                     <div class="portlet box blue">
                                         <div class="portlet-title">
-                                            <div class="caption">
-                                                <i class="fa fa-cogs"></i>Bordered Bootstrap 3.0 Responsive Table </div>
+                                            <div class="caption"></div>
                                             <div class="tools">
                                                 
                                             </div>
@@ -183,13 +182,13 @@
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th> # </th>
-                                                            <th> Table heading </th>
-                                                            <th> Table heading </th>
-                                                            <th> Table heading </th>
-                                                            <th> Table heading </th>
-                                                            <th> Table heading </th>
-                                                            <th> Table heading </th>
+                                                            <th> No. </th>
+                                                            <th> No. Surat </th>
+                                                            <th> Nama </th>
+                                                            <th> Divisi </th>
+                                                            <th> Keperluan </th>
+                                                            <th> Alasan </th>
+                                                            <th> Lama Ijin</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
