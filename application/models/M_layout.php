@@ -435,10 +435,10 @@ class M_layout extends CI_Model {
                                         <a href="'. site_url().'/Dftr_surat"  class="nav-link  "> Daftar Surat Ijin </a>
                                     </li>
                                     <li class=" ">
-                                        <a href="layout_fluid_page.php" class="nav-link  "> Verifikasi Surat Ijin </a>
+                                        <a href="'. site_url() .'/Vrf_surat" class="nav-link  "> Verifikasi Surat Ijin </a>
                                     </li>
-									<li class=" ">
-                                        <a href="layout_fluid_page.php" class="nav-link  "> Riwayat Surat Ijin </a>
+                                    <li class=" ">
+                                        <a href="'.  site_url().'/Rwyat_surat" class="nav-link  "> Riwayat Surat Ijin </a>
                                     </li>
                                 </ul>
                             </li>
