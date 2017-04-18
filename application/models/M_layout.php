@@ -432,7 +432,7 @@ class M_layout extends CI_Model {
                                         <a href="' . site_url() . '/Tmb_surat" class="nav-link  "> Tambah Surat Ijin </a>
                                     </li>
                                     <li class=" ">
-                                        <a href="layout_top_bar_light.php" class="nav-link  "> Daftar Surat Ijin </a>
+                                        <a href="'. site_url().'/Dftr_surat"  class="nav-link  "> Daftar Surat Ijin </a>
                                     </li>
                                     <li class=" ">
                                         <a href="layout_fluid_page.php" class="nav-link  "> Verifikasi Surat Ijin </a>
