@@ -13,7 +13,7 @@ class M_layout extends CI_Model {
 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic || ' . $title . '</title>
+        <title>Permohonan Ijin || ' . $title . '</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -59,7 +59,7 @@ class M_layout extends CI_Model {
                 <div class="container">
                     <!-- BEGIN LOGO -->
                     <div class="page-logo">
-                        <a href="index.html">
+                        <a href="'.  site_url().'/C_Dashboard">
                             <img src="' . base_url() . '/assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
                         </a>
                     </div>

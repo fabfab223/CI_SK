@@ -20,7 +20,7 @@
                 <div class="container">
                     <!-- BEGIN PAGE TITLE -->
                     <div class="page-title">
-                        <h1>Daftar Surat Ijin
+                        <h1>Verifikasi Surat Ijin
                         </h1>
                     </div>
                     <!-- END PAGE TITLE -->
@@ -153,7 +153,7 @@
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
-                            <span>Daftar Surat Ijin</span>
+                            <span>Verifikasi Surat Ijin</span>
                         </li>
                     </ul>
                     <!-- END PAGE BREADCRUMBS -->
@@ -166,7 +166,7 @@
                                     <div class="portlet-title">
                                         <div class="caption">
 
-                                            <span class="caption-subject font-blue sbold uppercase">Daftar Surat Ijin</span><br><br>
+                                            <span class="caption-subject font-blue sbold uppercase">Verifikasi Surat Ijin</span><br><br>
                                         </div>
 
                                         <!-- BEGIN SAMPLE TABLE PORTLET-->
