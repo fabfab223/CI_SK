@@ -185,7 +185,7 @@
                                                     <th> Alamat </th>
                                                     <th> Tgl Lahir </th>
                                                     <th> No. Hp </th>
-                                                    <th> Status </th>
+                                                    <th colspan="2"> Opsi </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -204,7 +204,8 @@
                                                             <td><?php echo $data->alamat; ?></td>
                                                             <td><?php echo $data->tanggal_lahir; ?></td>
                                                             <td><?php echo $data->nomor_telp; ?></td>
-                                                            <td>Status</td>
+                                                            <td scope="col" >Edit</td>
+                                                            <td scope="col">Delete</td>
                                                         </tr>
                                                         <?php
                                                     }

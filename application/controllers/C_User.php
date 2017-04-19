@@ -37,4 +37,17 @@ class C_User extends CI_Controller {
         header("location:".base_Url('/index.php/C_User'));
     }
     
+    function updatedata($nama,$no){
+        if($_POST==NULL){
+            $this->load->model('M_update');
+            $data['hasil'] = $this->M_update->filterdata($no,$nama);
+            $this->load->view('V_User',$data);
+        }
+        else{
+            $this->load->model('M_update');
+            $this->M_update->updatedata();
+            redirect('C_User/index');
+        }
+    }
+    
 }
