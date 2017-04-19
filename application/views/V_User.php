@@ -168,27 +168,27 @@
                                 <div class="portlet-body">
                                     <div class="table-scrollable table-scrollable-borderless">
                                         <?php
-                                                if (empty($hasil)) {
-                                                    echo "Tidak ada data";
-                                                } else {
-                                                    ?>
-                                        <table class="table table-hover table-light">
-                                            <thead>
-                                                <tr class="uppercase">
-                                                    <th> # </th>
-                                                    <th> Nama </th>
-                                                    <th> Jabatan </th>
-                                                    <th> Jenis Kelamin </th>
-                                                    <th> Divisi </th>
-                                                    <th> Username </th>
-                                                    <th> Password </th>
-                                                    <th> Alamat </th>
-                                                    <th> Tgl Lahir </th>
-                                                    <th> No. Hp </th>
-                                                    <th colspan="2"> Opsi </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                        if (empty($hasil)) {
+                                            echo "Tidak ada data";
+                                        } else {
+                                            ?>
+                                            <table class="table table-hover table-light">
+                                                <thead>
+                                                    <tr class="uppercase">
+                                                        <th> # </th>
+                                                        <th> Nama </th>
+                                                        <th> Jabatan </th>
+                                                        <th> Jenis Kelamin </th>
+                                                        <th> Divisi </th>
+                                                        <th> Username </th>
+                                                        <th> Password </th>
+                                                        <th> Alamat </th>
+                                                        <th> Tgl Lahir </th>
+                                                        <th> No. Hp </th>
+                                                        <th colspan="2"> Opsi </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
                                                     <?php
                                                     $no = 1;
                                                     foreach ($hasil as $data) {
@@ -204,15 +204,15 @@
                                                             <td><?php echo $data->alamat; ?></td>
                                                             <td><?php echo $data->tanggal_lahir; ?></td>
                                                             <td><?php echo $data->nomor_telp; ?></td>
-                                                            <td scope="col" >Edit</td>
-                                                            <td scope="col">Delete</td>
+                                                            <td scope="col" ><a class="btn blue btn-outline" data-toggle="modal" href="#basic">Edit</a></td>
+                                                            <td scope="col"><a class="btn blue btn-outline" data-toggle="modal" href="#basic">Delete</a></td>
                                                         </tr>
                                                         <?php
                                                     }
                                                     ?>
-                                                <?php
-                                            }
-                                            ?>
+                                                    <?php
+                                                }
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -352,11 +352,6 @@
     </div>
     <!-- END CONTENT -->
     <!-- BEGIN QUICK SIDEBAR -->
-    <a href="javascript:;" class="page-quick-sidebar-toggler">
-        <i class="icon-login"></i>
-    </a>
-    <div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
-        <div class="page-quick-sidebar">
 
         </div>
         <!-- END CONTAINER -->
