@@ -172,13 +172,13 @@
                                         <!-- Modal  -->
                                         <div id="basic">
                                             <!-- BEGIN FORM-->
-                                            <form action="#" class="horizontal-form">
+                                            <form action="<?= base_url() ?>/index.php/Tmb_surat/tambahdata" method="post" class="horizontal-form">
                                                 <div class="form-body">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label class="control-label">Nama Lengkap</label>
-                                                                <input type="text" id="firstName" class="form-control" placeholder="John Pantau">
+                                                                <input type="text" id="nama" name="nama" class="form-control" placeholder="John Pantau">
 
                                                             </div>
                                                         </div>
@@ -188,9 +188,9 @@
                                                                 <label class="control-label">Jenis Kelamin</label>
                                                                 <div class="radio-list">
                                                                     <label class="radio-inline">
-                                                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Laki - Laki</label>
+                                                                        <input type="radio" name="jk" id="optionsRadios1" value="L"> Laki - Laki</label>
                                                                     <label class="radio-inline">
-                                                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Perempuan </label>
+                                                                        <input type="radio" name="jk" id="optionsRadios2" value="P"> Perempuan </label>
 
                                                                 </div>										
                                                             </div>
@@ -206,10 +206,10 @@
                                                             <div class="form-group">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Divisi</label>
-                                                                    <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                                        <option value="Category 1">Admin</option>
-                                                                        <option value="Category 2">Software</option>
-                                                                        <option value="Category 3">Hardware</option>
+                                                                    <select class="form-control" name="jabatan" tabindex="1">
+                                                                        <option value="Admin">Admin</option>
+                                                                        <option value="Software">Software</option>
+                                                                        <option value="Hardware">Hardware</option>
 
                                                                     </select>
                                                                 </div>
@@ -219,9 +219,9 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label class="control-label">Keperluan</label><br>
-                                                                <input type="checkbox" class="form-control" data-placeholder="Choose a Category" tabindex="1">Ijin/Cuti</input>
-                                                                <input type="checkbox" class="form-control" data-placeholder="Choose a Category" tabindex="1">Terlambat</input>
-                                                                <input type="checkbox" class="form-control" data-placeholder="Choose a Category" tabindex="1">Dinas Luar</input>
+                                                                <input type="checkbox" class="form-control" name="keperluan" value="Ijin/Cuti"tabindex="1">Ijin/Cuti</input>
+                                                                <input type="checkbox" class="form-control" name="keperluan" value="Terlambat" tabindex="1">Terlambat</input>
+                                                                <input type="checkbox" class="form-control" name="keperluan" value="Dinas Luar" tabindex="1">Dinas Luar</input>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -235,12 +235,12 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Alasan</label>
-                                                                <input type="text" class="form-control"> </div>
+                                                                <input type="text" name="alasan" class="form-control"> </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label>Lama Ijin</label>
-                                                                <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+                                                                <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy-mm-dd">
                                                                     <input type="text" class="form-control" name="from">
                                                                     <span class="input-group-addon"> S/d </span>
                                                                     <input type="text" class="form-control" name="to"> </div>

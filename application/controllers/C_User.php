@@ -29,6 +29,7 @@ class C_User extends CI_Controller {
         $d['username'] = $this->input->post('username');
         $d['password'] = $this->input->post('password');
         
+//        print_r($d);
         $this->M_entry->tambah($d);
         
         header("location:".base_Url('/index.php/C_User'));
