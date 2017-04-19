@@ -14,6 +14,8 @@ class C_User extends CI_Controller {
         $data['setMeta'] = $this->M_layout->setMeta("Master User");
         $data['setHeader'] = $this->M_layout->setHeader();
         $data['setFooter'] = $this->M_layout->setFooter();
+        $this->load->model('M_get');
+        $data['hasil'] = $this->M_get->bacadata();
         $this->parser->parse('V_User', $data);
         
     }
@@ -34,4 +36,5 @@ class C_User extends CI_Controller {
         
         header("location:".base_Url('/index.php/C_User'));
     }
+    
 }
