@@ -3,10 +3,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class C_User extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->model("M_entry");
+        $this->load->model("M_delete");
+        $this->load->model("M_get");
     }
 
     public function index() {
@@ -15,12 +17,11 @@ class C_User extends CI_Controller {
         $data['setHeader'] = $this->M_layout->setHeader();
         $data['setFooter'] = $this->M_layout->setFooter();
         $this->load->model('M_get');
-        $data['hasil'] = $this->M_get->bacadata();
+        $data['hasil'] = $this->M_get->bacadata_user();
         $this->parser->parse('V_User', $data);
-        
     }
-    
-    function tambahdata(){
+
+    function tambahdata() {
         $d['id_jabatan'] = $this->input->post('jabatan');
         $d['nama'] = $this->input->post('nama');
         $d['jenis_kelamin'] = $this->input->post('jk');
@@ -30,24 +31,28 @@ class C_User extends CI_Controller {
         $d['nomor_telp'] = $this->input->post('nomer');
         $d['username'] = $this->input->post('username');
         $d['password'] = $this->input->post('password');
-        
+
 //        print_r($d);
         $this->M_entry->tambah($d);
-        
-        header("location:".base_Url('/index.php/C_User'));
+
+        header("location:" . base_Url('/index.php/C_User'));
     }
-    
-    function updatedata($nama,$no){
-        if($_POST==NULL){
+
+    function updatedata($nama, $no) {
+        if ($_POST == NULL) {
             $this->load->model('M_update');
-            $data['hasil'] = $this->M_update->filterdata($no,$nama);
-            $this->load->view('V_User',$data);
-        }
-        else{
+            $data['hasil'] = $this->M_update->filterdata($no, $nama);
+            $this->load->view('V_User', $data);
+        } else {
             $this->load->model('M_update');
             $this->M_update->updatedata();
             redirect('C_User/index');
         }
     }
-    
+
+    public function delete($id) {
+
+        $this->M_delete->delete($id);
+    }
+
 }

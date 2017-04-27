@@ -26,9 +26,9 @@ function updatedata(){
         $this->db->update('m_user',$data);
     }
  
-    function filterdata($no,$nama){
+    function filterdata($nomor,$nama){
         return $this->db->get_where('m_user',
-                          array('nomer_telp'=>$no,
+                          array('nomor_telp'=>$nomor,
                                 'nama'=>$nama))->row();
     }
     
