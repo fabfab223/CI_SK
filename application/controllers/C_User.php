@@ -7,7 +7,6 @@ class C_User extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model("M_entry");
-        $this->load->model("M_delete");
         $this->load->model("M_get");
     }
 
@@ -31,28 +30,38 @@ class C_User extends CI_Controller {
         $d['nomor_telp'] = $this->input->post('nomer');
         $d['username'] = $this->input->post('username');
         $d['password'] = $this->input->post('password');
+        $id_user = $this->input->post('id_user');
+        $form_mode = $this->input->post('formMode');
 
-//        print_r($d);
-        $this->M_entry->tambah($d);
+        if ($form_mode == "Tambah") {
+            $this->M_entry->tambah($d);
+        } else if ($form_mode == "Ubah") {
+            $this->db->from('m_user');
+            $this->db->where('id_user', $id_user);
+            $query = $this->db->get();
+            $Fields = $query->row();
+            if ($Fields->password == $d['password']) {
+                $d['password'] = $Fields->password;
+            } else {
+                $d['password'] = md5(md5($d['password']));
+            }
+            $this->M_entry->update($d, $id_user);
+        }
+
 
         header("location:" . base_Url('/index.php/C_User'));
     }
 
-    function updatedata($nama, $no) {
-        if ($_POST == NULL) {
-            $this->load->model('M_update');
-            $data['hasil'] = $this->M_update->filterdata($no, $nama);
-            $this->load->view('V_User', $data);
-        } else {
-            $this->load->model('M_update');
-            $this->M_update->updatedata();
-            redirect('C_User/index');
-        }
+    public function delete($id) {
+        $this->M_entry->delete($id);
+        header("location:" . base_Url('/index.php/C_User'));
     }
 
-    public function delete($id) {
+    public function getUser() {
+        $where['id_user'] = $this->input->post('id');
+        $c = $this->M_get->getUser($where);
 
-        $this->M_delete->delete($id);
+        echo json_encode($c);
     }
 
 }

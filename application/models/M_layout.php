@@ -19,7 +19,6 @@ class M_layout extends CI_Model {
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
         <link href="' . base_url() . '/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="' . base_url() . '/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="' . base_url() . '/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -59,7 +58,7 @@ class M_layout extends CI_Model {
                 <div class="container">
                     <!-- BEGIN LOGO -->
                     <div class="page-logo">
-                        <a href="'.  site_url().'/C_Dashboard">
+                        <a href="' . site_url() . '/C_Dashboard">
                             <img src="' . base_url() . '/assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
                         </a>
                     </div>
@@ -75,7 +74,7 @@ class M_layout extends CI_Model {
                             <li class="dropdown dropdown-user dropdown-dark">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <img alt="" class="img-circle" src="' . base_url() . '/assets/layouts/layout3/img/avatar9.jpg">
-                                    <span class="username username-hide-mobile">Nick</span>
+                                    <span class="username username-hide-mobile">' . $this->session->userdata('nama') . '</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
@@ -141,13 +140,13 @@ class M_layout extends CI_Model {
                                         <a href="' . site_url() . '/Tmb_surat" class="nav-link  "> Tambah Surat Ijin </a>
                                     </li>
                                     <li class=" ">
-                                        <a href="'. site_url().'/Dftr_surat"  class="nav-link  "> Daftar Surat Ijin </a>
+                                        <a href="' . site_url() . '/Dftr_surat"  class="nav-link  "> Daftar Surat Ijin </a>
                                     </li>
                                     <li class=" ">
-                                        <a href="'. site_url() .'/Vrf_surat" class="nav-link  "> Verifikasi Surat Ijin </a>
+                                        <a href="' . site_url() . '/Vrf_surat" class="nav-link  "> Verifikasi Surat Ijin </a>
                                     </li>
                                     <li class=" ">
-                                        <a href="'.  site_url().'/Rwyat_surat" class="nav-link  "> Riwayat Surat Ijin </a>
+                                        <a href="' . site_url() . '/Rwyat_surat" class="nav-link  "> Riwayat Surat Ijin </a>
                                     </li>
                                 </ul>
                             </li>

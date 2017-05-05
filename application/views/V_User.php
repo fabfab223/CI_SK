@@ -20,7 +20,7 @@
                     <!-- END PAGE TITLE -->
                     <!-- BEGIN PAGE TOOLBAR -->
                     <div class="page-toolbar">
-                        
+
                     </div>
                     <!-- END PAGE TOOLBAR -->
                 </div>
@@ -65,7 +65,7 @@
                                             echo "Tidak ada data";
                                         } else {
                                             ?>
-                                            <table class="table table-hover table-light">
+                                            <table class="table table-hover table-light" id="tbl_user">
                                                 <thead>
                                                     <tr class="uppercase">
                                                         <th> # </th>
@@ -74,7 +74,6 @@
                                                         <th> Jenis Kelamin </th>
                                                         <th> Divisi </th>
                                                         <th> Username </th>
-                                                        <th> Password </th>
                                                         <th> Alamat </th>
                                                         <th> Tgl Lahir </th>
                                                         <th> No. Hp </th>
@@ -93,11 +92,10 @@
                                                             <td><?php echo $data->jenis_kelamin; ?></td>
                                                             <td><?php echo $data->divisi; ?></td>
                                                             <td><?php echo $data->username; ?></td>
-                                                            <td><?php echo $data->password; ?></td>
                                                             <td><?php echo $data->alamat; ?></td>
                                                             <td><?php echo $data->tanggal_lahir; ?></td>
                                                             <td><?php echo $data->nomor_telp; ?></td>
-                                                            <td scope="col" ><a class="btn blue btn-outline" data-toggle="modal" href="#basic">Edit</a></td>
+                                                            <td scope="col" ><a class="btn blue btn-outline btn-ubah" id="<?= $data->id_user ?>">Edit</a></td>
                                                             <td scope="col"><a class="btn blue btn-outline" href="C_User/delete/<?php echo $data->id_user; ?>">Delete</a></td>
                                                         </tr>
                                                         <?php
@@ -112,8 +110,6 @@
                                 </div>
                             </div>
                             <!-- END BORDERED TABLE PORTLET-->
-                            </td>
-                            </tr>
                             <!-- Modal  -->
                             <div class="modal fade" id="basic" tabindex="-1" role="large" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -123,13 +119,13 @@
                                                     <!-- BEGIN FORM-->
                                                     <form action="<?= base_url() ?>/index.php/C_user/tambahdata" method="post" class="horizontal-form">
                                                         <div class="form-body">
-                                                            <h3 class="form-section">Tambah User</h3>
-
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Nama Lengkap</label>
-                                                                        <input type="text" id="nama" name="nama" class="form-control" placeholder="John Pantau">
+                                                                        <input type="hidden" id="formMode" name="formMode" class="formMode" value="Tambah">
+                                                                        <input type="hidden" id="id_user" name="id_user" class="id_user">
+                                                                        <input type="text" id="nama" name="nama" class="form-control nama" placeholder="John Pantau">
 
                                                                     </div>
                                                                 </div>
@@ -137,7 +133,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">No. Handphone</label>
-                                                                        <input maxlength="13" minlength="4" type="text" id="nomer" name="nomer" class="form-control" placeholder="083124763899">
+                                                                        <input maxlength="13" minlength="4" type="text" id="nomer" name="nomer" class="form-control nomer" placeholder="083124763899">
 
                                                                     </div>
                                                                 </div>
@@ -145,22 +141,20 @@
                                                             </div>
                                                             <!--/row-->
                                                             <div class="row">
-
-
                                                                 <!--/span-->
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Tanggal Lahir</label>
-                                                                        <input type="date" class="form-control" name="tgl" placeholder="dd/mm/yyyy"> </div>
+                                                                        <input type="date" class="form-control tgl" name="tgl" placeholder="dd/mm/yyyy"> </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Jenis Kelamin</label>
                                                                         <div class="radio-list">
                                                                             <label class="radio-inline">
-                                                                                <input type="radio" name="jk" id="optionsRadios1" value="L" checked> Laki - Laki</label>
+                                                                                <input type="radio" name="jk" id="jkL" value="L"> Laki - Laki</label>
                                                                             <label class="radio-inline">
-                                                                                <input type="radio" name="jk" id="optionsRadios2" value="P"> Perempuan </label>
+                                                                                <input type="radio" name="jk" id="jkP" value="P"> Perempuan </label>
 
                                                                         </div>
                                                                     </div>
@@ -172,7 +166,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Jabatan</label>
-                                                                        <select class="form-control" data-placeholder="Choose a Category" name="jabatan" tabindex="1">
+                                                                        <select class="form-control jabatan" data-placeholder="Choose a Category" name="jabatan" tabindex="1">
                                                                             <option value="1">Karyawan</option>
                                                                             <option value="2">Admin</option>
                                                                             <option value="3">Head Divisi</option>
@@ -183,7 +177,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Divisi</label>
-                                                                        <select class="form-control" name="divisi" data-placeholder="Choose a Category" tabindex="1">
+                                                                        <select class="form-control divisi" name="divisi" data-placeholder="Choose a Category" tabindex="1">
                                                                             <option value="Admin">Admin</option>
                                                                             <option value="Software">Software</option>
                                                                             <option value="Hardware">Hardware</option>
@@ -199,12 +193,12 @@
                                                                 <div class="col-md-12 ">
                                                                     <div class="form-group">
                                                                         <label>Alamat</label>
-                                                                        <input type="text" class="form-control" name="alamat"> </div>
+                                                                        <input type="text" class="form-control alamat" name="alamat"> </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Username</label>
-                                                                        <input type="text" autocomplete="off" id="username" name="username" class="form-control">
+                                                                        <input type="text" autocomplete="off" id="username" name="username" class="form-control username">
 
                                                                     </div>
                                                                 </div>
@@ -212,7 +206,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="control-label">Password</label>
-                                                                        <input type="password" autocomplete="off" id="password" name="password" class="form-control">
+                                                                        <input type="password" autocomplete="off" id="password" name="password" class="form-control password">
 
                                                                     </div>
                                                                 </div>
@@ -295,6 +289,47 @@
 <script src="../assets/layouts/layout3/scripts/demo.min.js" type="text/javascript"></script>
 <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+<script>
+    $(document).ready(function () {
+        $("#tbl_user").on("click", ".btn-ubah", function () {
+            var id = $(this).attr("id");
+            
+            $.ajax({
+                url: '<?= base_url() ?>index.php/C_User/getUser',
+                type: 'post',
+                data: "id=" + id,
+                dataType: "JSON",
+                success: function (data) {
+                    $(".modal#basic .modal-body .formMode").val("Ubah");
+                    $(".modal#basic .modal-body .id_user").val(data[0].id_user);
+                    $(".modal#basic .modal-body .nama").val(data[0].nama);
+                    $(".modal#basic .modal-body .nomer").val(data[0].nomor_telp);
+                    $(".modal#basic .modal-body .tgl").val(data[0].tanggal_lahir);
+                    $(".modal#basic .modal-body #jk"+data[0].jenis_kelamin)
+                            .parent("span")
+                            .addClass("checked");
+//                    if (data[0].jenis_kelamin == "L") {
+//                        $(".modal#basic .modal-body #jkL")
+//                    .parent("span")
+//                    .addClass("checked");   
+//                    }else{
+//                        $(".modal#basic .modal-body #jkP")
+//                    .parent("span")
+//                    .addClass("checked")
+//                    }
+                    $(".modal#basic .modal-body .jabatan").val(data[0].id_jabatan);
+                    $(".modal#basic .modal-body .divisi").val(data[0].divisi);
+                    $(".modal#basic .modal-body .alamat").val(data[0].alamat);
+                    $(".modal#basic .modal-body .username").val(data[0].username);
+                    $(".modal#basic .modal-body .password").val(data[0].password);
+                    
+                    $(".modal#basic").modal("show");
+                    console.log(data);
+                }
+            })
+        })
+    })
+</script>
 </body>
 
 </html>
