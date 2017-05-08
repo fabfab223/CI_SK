@@ -33,13 +33,14 @@ class C_login extends CI_Controller {
 
             redirect(base_url("index.php/C_Dashboard"));
         } else {
-            echo "Username dan password salah !";
+            
+            redirect(base_url("index.php/C_login"));
         }
     }
 
     function logout() {
         $this->session->sess_destroy();
-        redirect(base_url('login'));
+        redirect(base_url('index.php/C_login'));
     }
 
 }

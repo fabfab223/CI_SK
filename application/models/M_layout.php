@@ -14,6 +14,7 @@ class M_layout extends CI_Model {
     <head>
         <meta charset="utf-8" />
         <title>Permohonan Ijin || ' . $title . '</title>
+        <link rel="icon" type="image/png" href="http://thegreatsoft.com/assets/user/images/kallyas_icon.png">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="" name="description" />
@@ -68,7 +69,7 @@ class M_layout extends CI_Model {
                     <!-- END RESPONSIVE MENU TOGGLER -->
                     <!-- BEGIN TOP NAVIGATION MENU -->
                     <div class="top-menu">
-                        <ul class="nav navbar-nav pull-right">
+                    <ul class="nav navbar-nav pull-right">
                             
                             <!-- BEGIN USER LOGIN DROPDOWN -->
                             <li class="dropdown dropdown-user dropdown-dark">
@@ -82,7 +83,7 @@ class M_layout extends CI_Model {
                                             <i class="icon-user"></i> My Profile </a>
                                     </li>
                                     <li>
-                                        <a href="page_user_login_1.html">
+                                        <a href="' . base_url() . 'index.php/C_login/logout">
                                             <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>

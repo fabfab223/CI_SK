@@ -51,7 +51,7 @@ class Tmb_surat extends CI_Controller {
 
         $this->db->from('m_user');
         $this->db->where('divisi', $Fields1->divisi);
-        $this->db->where('id_jabatan', 3);
+        $this->db->where('id_jabatan', 2);
         $query2 = $this->db->get();
         $Fields2 = $query2->row();
 

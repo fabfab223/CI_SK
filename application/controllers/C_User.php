@@ -34,6 +34,7 @@ class C_User extends CI_Controller {
         $form_mode = $this->input->post('formMode');
 
         if ($form_mode == "Tambah") {
+            $d['password'] = md5(md5($this->input->post('password')));
             $this->M_entry->tambah($d);
         } else if ($form_mode == "Ubah") {
             $this->db->from('m_user');

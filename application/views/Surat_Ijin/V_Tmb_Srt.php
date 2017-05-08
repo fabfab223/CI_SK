@@ -87,7 +87,7 @@
                                             <form action="<?= base_url() ?>/index.php/Tmb_surat/tambahdata" method="post" class="horizontal-form">
                                                 <div class="form-body">
                                                     <div class="row">
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label class="control-label">Nomor Surat</label>
                                                                 <input type="text" id="nosur" name="nosur" class="form-control">
@@ -139,7 +139,7 @@
                                                         <!--/row-->
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label class="control-label">Keperluan</label><br>
+                                                                <label class="control-label">Keperluan</label>
                                                                 <div class="radio-list">
                                                                     <label class="radio-inline">
                                                                         <input type="radio" name="keperluan" id="keperluanIjinCuti" value="IjinCuti"> Ijin/Cuti</label>
@@ -161,12 +161,12 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label>Alasan</label>
+                                                                <label class="control-label">Alasan</label>
                                                                 <input type="text" name="alasan" class="form-control"> </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label>Lama Ijin</label>
+                                                                <label class="control-label">Lama Ijin</label>
                                                                 <div class="input-group" data-date-time-format="YYYY-MM-DD HH:mm:00">
                                                                     <input type="datetime" class="form-control" name="from" >
                                                                     <span class="input-group-addon"> S/d </span>
